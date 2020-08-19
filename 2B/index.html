@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2B: Cập nhật những quyển sách sẽ đọc</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB5zah9be6mYWd7z5Q72JvpUkhigvQQd4U",
+            authDomain: "test-mindx.firebaseapp.com",
+            databaseURL: "https://test-mindx.firebaseio.com",
+            projectId: "test-mindx",
+            storageBucket: "test-mindx.appspot.com",
+            messagingSenderId: "648577526558",
+            appId: "1:648577526558:web:f069bace744a23f456f70f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <div class="title">
+            <h1>Danh sách những cuốn sách sẽ đọc trong 1 năm</h1>
+        </div>
+        <div class="main">
+            <div class="read">
+                <table id="readBookList">
+
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên sách</th>
+                        <th>Tác giả</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                    <tr>
+                        <td>Loading...</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+
+
+        <div class="form">
+            <form id="addBookForm">
+                <h1>Thêm sách mới</h1>
+                <label for="bookname">Tên sách</label>
+                <input type="text" name="bookname" placeholder="Tên sách..">
+                <p class="error" id="bookname-error"></p>
+                <label for="author">Tác giả</label>
+                <input type="text" name="author" placeholder="Tác giả..">
+                <p class="error" id="author-error"></p>
+                <input type="submit" value="Thêm sách">
+            </form>
+            <div class=footer></div>
+        </div>
+
+        <!-- Add scripts -->
+        <script src="index.js"></script>
+</body>
+
+</html>
